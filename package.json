@@ -16,6 +16,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "gray-matter": "^4.0.3",
     "next": "15.1.5",
     "react": "^19.0.0",

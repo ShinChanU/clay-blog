@@ -1,6 +1,6 @@
 ---
 title: 'Next.js에서 동적 라우팅 시 404 에러 해결 방법'
-date: '2025-01-19'
+date: '2025-01-19 22:27'
 description: 'Next.js의 동적 라우팅에서 발생하는 404 에러의 원인과 해결 방법을 코드와 함께 설명합니다.'
 tags: ['Next.js', 'Dynamic Routing', '404 Error', 'React']
 ---

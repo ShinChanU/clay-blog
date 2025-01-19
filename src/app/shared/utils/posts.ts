@@ -10,6 +10,7 @@ export interface PostData {
   date: string;
   description: string;
   id: string;
+  tags: string[];
   title: string;
 }
 
@@ -30,6 +31,7 @@ export async function getPostData(id: string): Promise<null | PostData> {
       date: data.date as string,
       description: data.description as string,
       id,
+      tags: data.tags as string[],
       title: data.title as string,
     };
   } catch (error) {
@@ -68,6 +70,7 @@ export async function getSortedPostsData(): Promise<PostData[]> {
           date: data.date as string,
           description: data.description as string,
           id: fileName.replace(/\.md$/, ''), // 파일 이름을 id로 사용
+          tags: data.tags as string[],
           title: data.title as string,
         };
       })
