@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack --port 8888",
-    "open": "open http://localhost:8888",
+    "dev": "next dev --turbopack",
+    "open": "open http://localhost:3000",
     "dev:start": "pnpm run dev & pnpm run open",
     "build": "next build",
     "start": "next start",
@@ -16,9 +16,12 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "15.1.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.3",
+    "rehype-sanitize": "^6.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
