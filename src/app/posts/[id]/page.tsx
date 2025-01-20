@@ -1,5 +1,7 @@
+import { Navbar } from '@/app/shared/ui';
 import { getPostData } from '@/app/shared/utils/posts';
 import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
 import rehypeSanitize from 'rehype-sanitize';
 
 interface Props {
@@ -22,11 +24,18 @@ const PostPage = async ({ params }: Props) => {
   }
 
   return (
-    <main>
-      <h1>{post.title}</h1>
-      <p>{post.date}</p>
-      <ReactMarkdown rehypePlugins={[rehypeSanitize]}>{post.content}</ReactMarkdown>
-    </main>
+    <>
+      <Navbar />
+      <header className="mx-auto mb-8 w-full border-b border-gray-300 bg-blue-200 pb-8 pt-4">
+        <div className="container mx-auto flex flex-col items-center">
+          <h1 className="text-3xl font-bold text-gray-900">{post.title}</h1>
+          <p className="text-sm text-gray-600">{post.date}</p>
+        </div>
+      </header>
+      <div className="container mx-auto flex-1 px-4 py-8">
+        <ReactMarkdown rehypePlugins={[rehypeSanitize, rehypeHighlight]}>{post.content}</ReactMarkdown>
+      </div>
+    </>
   );
 };
 

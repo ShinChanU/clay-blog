@@ -6,7 +6,7 @@ export default async function PostsPage() {
   const posts = await getSortedPostsData();
 
   return (
-    <main className="flex min-h-screen flex-col bg-gray-100">
+    <>
       <Navbar />
       <main className="container mx-auto flex-1 px-4 py-8">
         {/* <h1 className="mb-6 text-4xl font-bold">Welcome to My Blog</h1> */}
@@ -17,6 +17,6 @@ export default async function PostsPage() {
         </ul>
       </main>
       <Footer />
-    </main>
+    </>
   );
 }

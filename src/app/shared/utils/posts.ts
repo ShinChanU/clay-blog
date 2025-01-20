@@ -40,16 +40,6 @@ export async function getPostData(id: string): Promise<null | PostData> {
   }
 }
 
-export async function getPostProps(): Promise<{ params: { id: string } }[]> {
-  const fileNames = await fs.readdir(postsDirectory); // 비동기 readdir
-
-  return fileNames.map((fileName) => ({
-    params: {
-      id: fileName.replace(/\.md$/, ''), // 확장자 제거하여 ID로 사용
-    },
-  }));
-}
-
 // 모든 포스트 데이터 가져오는 함수
 export async function getSortedPostsData(): Promise<PostData[]> {
   try {

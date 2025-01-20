@@ -8,8 +8,8 @@ export default function PostCard({ post }: { post: PostData }) {
       className="overflow-hidden rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-xl"
       href={`/posts/${post.id}`}
     >
-      <h2 className="mb-2 text-2xl font-bold">{post.title}</h2>
-      <p className="mb-4 text-sm text-gray-500">{dayjs(post.date).format('YY.MM.DD HH:mm')}</p>
+      <h2 className="m-0 text-2xl font-bold">{post.title}</h2>
+      <p className="mb-4 mt-1 text-sm text-gray-500">{dayjs(post.date).format('YY.MM.DD HH:mm')}</p>
       <p className="mb-4 text-gray-600">{post.description}</p>
       <div className="flex flex-wrap items-center gap-2">
         {post.tags.map((tag) => (

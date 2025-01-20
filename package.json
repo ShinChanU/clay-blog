@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --port 3030",
     "open": "open http://localhost:3000",
     "dev:start": "pnpm run dev & pnpm run open",
     "build": "next build",
@@ -18,10 +18,12 @@
   "dependencies": {
     "dayjs": "^1.11.13",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^9.0.3",
+    "rehype-highlight": "^7.0.1",
     "rehype-sanitize": "^6.0.0"
   },
   "devDependencies": {
