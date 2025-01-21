@@ -2,20 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    --background: #ffffff;
+    --foreground: #030712;
+    --card: #ffffff;
+    --card-foreground: #030712;
+    --popover: #ffffff;
+    --popover-foreground: #030712;
+    --primary: #7b39ed;
+    --primary-foreground: #f9fafb;
+    --secondary: #f3f4f6;
+    --secondary-foreground: #111827;
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+    --accent: #f3f4f6;
+    --accent-foreground: #111827;
+    --destructive: #ef4400;
+    --destructive-foreground: #f9fafb;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #7b39ed;
+    --radius: 0.5rem;
+    --chart-1: #e76e50;
+    --chart-2: #2a9d90;
+    --chart-3: #274754;
+    --chart-4: #e9c468;
+    --chart-5: #f4a462;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    /* GPT 추천 추가하면 좋을 색상 */
+    /* --info: #3b82f6;
+    --info-foreground: #ffffff;
+    --warning: #f59e0b;
+    --warning-foreground: #ffffff;
+    --success: #10b981;
+    --success-foreground: #ffffff; */
+
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+    --font-serif: 'Playfair Display', serif;
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+  }
+
+  .dark {
+    --background: #030712;
+    --foreground: #f9fafb;
+    --card: #030712;
+    --card-foreground: #f9fafb;
+    --popover: #030712;
+    --popover-foreground: #f9fafb;
+    --primary: #6d28d9;
+    --primary-foreground: #f9fafb;
+    --secondary: #1f2937;
+    --secondary-foreground: #f9fafb;
+    --muted: #1f2937;
+    --muted-foreground: #9ca3af;
+    --accent: #1f2937;
+    --accent-foreground: #f9fafb;
+    --destructive: #7f1d00;
+    --destructive-foreground: #f9fafb;
+    --border: #1f2937;
+    --input: #1f2937;
+    --ring: #6d28d9;
+    --chart-1: #2661d9;
+    --chart-2: #2eb88a;
+    --chart-3: #e88c30;
+    --chart-4: #af57db;
+    --chart-5: #e23670;
+  }
+
+  h1 {
+    @apply text-5xl font-extrabold leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-4xl font-bold leading-tight tracking-tight;
+  }
+
+  h3 {
+    @apply text-3xl font-semibold leading-tight;
+  }
+
+  h4 {
+    @apply text-2xl font-semibold leading-snug;
+  }
+
+  h5 {
+    @apply text-xl font-medium leading-snug;
+  }
+
+  h6 {
+    @apply text-lg font-medium leading-normal;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+  }
 }

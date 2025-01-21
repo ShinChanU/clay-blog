@@ -5,17 +5,17 @@ import path from 'path';
 const postsDirectory = path.join(process.cwd(), 'content');
 
 // 포스트 데이터 타입 정의
-export interface PostData {
+export type TPostData = {
   content: string;
   date: string;
   description: string;
   id: string;
   tags: string[];
   title: string;
-}
+};
 
 // 단일 포스트 데이터 가져오는 함수
-export async function getPostData(id: string): Promise<null | PostData> {
+export async function getPostData(id: string): Promise<null | TPostData> {
   try {
     const filePath = path.join(postsDirectory, `${id}.md`);
     const fileContents = await fs.readFile(filePath, 'utf8'); // 비동기 readFile
@@ -41,7 +41,7 @@ export async function getPostData(id: string): Promise<null | PostData> {
 }
 
 // 모든 포스트 데이터 가져오는 함수
-export async function getSortedPostsData(): Promise<PostData[]> {
+export async function getSortedPostsData(): Promise<TPostData[]> {
   try {
     const fileNames = await fs.readdir(postsDirectory); // 비동기 readdir
 

@@ -2,17 +2,12 @@ import type { Metadata } from 'next';
 
 import '@/app/shared/styles/globals.css';
 import '@/app/shared/styles/reset.css';
-import 'highlight.js/styles/a11y-dark.css';
-import { Geist, Geist_Mono } from 'next/font/google';
+import 'highlight.js/styles/github-dark.css';
+import { Inter } from 'next/font/google';
 
-const geistSans = Geist({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-geist-sans',
-});
-
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
+  variable: '--font-sans',
 });
 
 export const metadata: Metadata = {
@@ -26,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <main className="flex min-h-screen flex-col bg-gray-100">{children}</main>
+    <html className={inter.variable} lang="ko">
+      <body className={`font-sans antialiased`}>
+        <main className="flex min-h-screen flex-col bg-background">{children}</main>
       </body>
     </html>
   );

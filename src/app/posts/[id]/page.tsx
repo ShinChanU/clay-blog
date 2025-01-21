@@ -1,16 +1,14 @@
-import { Navbar } from '@/app/shared/ui';
-import { getPostData } from '@/app/shared/utils/posts';
-import ReactMarkdown from 'react-markdown';
-import rehypeHighlight from 'rehype-highlight';
-import rehypeSanitize from 'rehype-sanitize';
+import { PostHead } from '@/app/posts/ui/index';
+import { Markdown } from '@/app/posts/ui/Markdown/index';
+import { getPostData, Navbar } from '@/app/shared/index';
 
-interface Props {
+type TProps = {
   params: Promise<{
     id: string;
   }>;
-}
+};
 
-const PostPage = async ({ params }: Props) => {
+const PostPage = async ({ params }: TProps) => {
   const id = (await params).id;
 
   if (!id) {
@@ -26,14 +24,13 @@ const PostPage = async ({ params }: Props) => {
   return (
     <>
       <Navbar />
-      <header className="mx-auto mb-8 w-full border-b border-gray-300 bg-blue-200 pb-8 pt-4">
-        <div className="container mx-auto flex flex-col items-center">
-          <h1 className="text-3xl font-bold text-gray-900">{post.title}</h1>
-          <p className="text-sm text-gray-600">{post.date}</p>
+      <header className="mx-auto w-full">
+        <div className="container mx-auto py-8">
+          <PostHead post={post} />
         </div>
       </header>
-      <div className="container mx-auto flex-1 px-4 py-8">
-        <ReactMarkdown rehypePlugins={[rehypeSanitize, rehypeHighlight]}>{post.content}</ReactMarkdown>
+      <div className={`container mx-auto flex-1 px-4 py-8`}>
+        <Markdown content={post.content} />
       </div>
     </>
   );

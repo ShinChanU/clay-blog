@@ -1,15 +1,9 @@
 ---
 title: 'Next.js에서 동적 라우팅 시 404 에러 해결 방법'
 date: '2025-01-19 22:27'
-description: 'Next.js의 동적 라우팅에서 발생하는 404 에러의 원인과 해결 방법을 코드와 함께 설명합니다.'
+description: 'Next.js의 동적 라우팅을 구현하다가 예상치 못한 404 에러가 발생했나요?
+이 글에서는 동적 라우팅의 기본 동작과 404 에러의 원인을 분석하고, 이를 해결하는 과정을 자세히 설명합니다.'
 tags: ['Next.js', 'Dynamic Routing', '404 Error', 'React']
----
-
-# Next.js에서 동적 라우팅 시 404 에러 해결 방법
-
-Next.js의 동적 라우팅을 구현하다가 예상치 못한 404 에러가 발생했나요?  
-이 글에서는 동적 라우팅의 기본 동작과 404 에러의 원인을 분석하고, 이를 해결하는 과정을 자세히 설명합니다.
-
 ---
 
 ## 문제 정의: 404 에러 발생
@@ -30,7 +24,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
 }
 ```
 
-그러나 브라우저에서 `http://localhost:3000/posts/123`에 접근하면 다음과 같은 404 에러가 발생했습니다.
+그러나 브라우저에서 `http://localhost:3000/posts/123` 에 접근하면 다음과 같은 404 에러가 발생했습니다.
 
 #### 에러 메시지:
 
@@ -46,7 +40,7 @@ Error: Cannot find module for page: /posts/123
 
 동적 라우트는 반드시 `[id]`와 같은 대괄호 문법을 사용해야 합니다. 파일명과 경로가 정확한지 다시 확인했습니다.
 
-### 2. `generateStaticParams`함수 추가
+### 2. `generateStaticParams` 함수 추가
 
 Next.js App Router에서 동적 라우팅을 사용할 때, 빌드 시 동적 경로를 정적으로 생성해야 합니다. 이를 위해 `generateStaticParams`를 구현했습니다.
 
