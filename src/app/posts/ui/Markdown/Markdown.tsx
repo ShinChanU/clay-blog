@@ -19,6 +19,7 @@ export const Markdown = ({ content }: TProps) => {
         h5: MarkdownComponents.h5,
         h6: MarkdownComponents.h6,
         hr: MarkdownComponents.hr,
+        img: MarkdownComponents.img,
         ol: MarkdownComponents.ol,
         p: MarkdownComponents.p,
         ul: MarkdownComponents.ul,

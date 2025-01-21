@@ -1,4 +1,5 @@
-import { AnchorHTMLAttributes, ClassAttributes, HTMLAttributes } from 'react';
+import Image from 'next/image';
+import { AnchorHTMLAttributes, ClassAttributes, HTMLAttributes, ImgHTMLAttributes } from 'react';
 import { ExtraProps } from 'react-markdown';
 
 export const MarkdownComponents = {
@@ -11,6 +12,7 @@ export const MarkdownComponents = {
   h5: HeadingH5,
   h6: HeadingH6,
   hr: CustomHR,
+  img: CustomImage,
   ol: CustomOrderedList,
   p: CustomParagraph,
   ul: CustomUnorderedList,
@@ -45,6 +47,24 @@ function CustomCode({ className, ...props }: ClassAttributes<HTMLElement> & Extr
 
 function CustomHR({ className, ...props }: ClassAttributes<HTMLHRElement> & HTMLAttributes<HTMLHRElement>) {
   return <hr className={`my-6 ${className || ''}`} {...props} />;
+}
+
+function CustomImage({
+  className,
+  ...props
+}: ClassAttributes<HTMLImageElement> & ExtraProps & ImgHTMLAttributes<HTMLImageElement>) {
+  return (
+    <span
+      className={`relative my-4 flex h-[300px] w-full items-center justify-center md:h-[400px] lg:h-[500px] ${className || ''}`}
+    >
+      <Image
+        alt={props.alt ?? 'Image-alt'}
+        className={`object-contain ${className || ''}`}
+        fill
+        src={props.src ? `/content/${props.src}` : ''} // content 폴더를 기준으로 동적 경로 생성
+      />
+    </span>
+  );
 }
 
 function CustomOrderedList({

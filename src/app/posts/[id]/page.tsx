@@ -29,9 +29,9 @@ const PostPage = async ({ params }: TProps) => {
           <PostHead post={post} />
         </div>
       </header>
-      <div className={`container mx-auto flex-1 px-4 py-8`}>
+      <section className={`container mx-auto flex-1 px-4 py-8`}>
         <Markdown content={post.content} />
-      </div>
+      </section>
     </>
   );
 };

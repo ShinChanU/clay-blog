@@ -2,7 +2,7 @@ import fs from 'fs/promises'; // 비동기 함수로 변경
 import matter from 'gray-matter';
 import path from 'path';
 
-const postsDirectory = path.join(process.cwd(), 'content');
+const postsDirectory = path.join(process.cwd(), '/public/content');
 
 // 포스트 데이터 타입 정의
 export type TPostData = {
