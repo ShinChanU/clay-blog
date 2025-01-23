@@ -15,5 +15,17 @@
   "[typescriptreact]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "themeswitcher.utcOffset": 9,
+  "themeswitcher.mappings": [
+    {
+      "time": "08:00",
+      "theme": "Night Owl Light (No Italics)"
+    },
+    {
+      "time": "09:00",
+      "theme": "Night Owl (No Italics)"
+    }
+  ],
+  "workbench.colorTheme": "Slack Theme Dark Mode"
 }

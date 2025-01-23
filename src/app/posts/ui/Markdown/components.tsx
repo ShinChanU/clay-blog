@@ -39,7 +39,7 @@ function CustomCode({ className, ...props }: ClassAttributes<HTMLElement> & Extr
   const isCodeBlock = className?.includes('language');
   return (
     <code
-      className={`${isCodeBlock ? '' : 'rounded-sm bg-muted p-0.5 font-mono text-inherit-sm'} ${className || ''}`}
+      className={`${isCodeBlock ? '' : 'rounded-sm bg-muted p-0.5 font-mono text-inherit-sm font-semibold'} ${className || ''}`}
       {...props}
     />
   );
@@ -54,14 +54,13 @@ function CustomImage({
   ...props
 }: ClassAttributes<HTMLImageElement> & ExtraProps & ImgHTMLAttributes<HTMLImageElement>) {
   return (
-    <span
-      className={`relative my-4 flex h-[300px] w-full items-center justify-center md:h-[400px] lg:h-[500px] ${className || ''}`}
-    >
+    <span className={`relative my-4 flex w-full items-center justify-center ${className || ''}`}>
       <Image
         alt={props.alt ?? 'Image-alt'}
         className={`object-contain ${className || ''}`}
-        fill
+        height={300} // 원하는 최대 높이
         src={props.src ? `/content/${props.src}` : ''} // content 폴더를 기준으로 동적 경로 생성
+        width={800} // 원하는 최대 너비
       />
     </span>
   );
@@ -78,7 +77,7 @@ function CustomParagraph({
   className,
   ...props
 }: ClassAttributes<HTMLParagraphElement> & HTMLAttributes<HTMLParagraphElement>) {
-  return <p className={`my-1 ${className || ''}`} {...props} />;
+  return <p className={`my-2 ${className || ''}`} {...props} />;
 }
 
 function CustomUnorderedList({

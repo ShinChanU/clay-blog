@@ -44,9 +44,10 @@ export async function getPostData(id: string): Promise<null | TPostData> {
 export async function getSortedPostsData(): Promise<TPostData[]> {
   try {
     const fileNames = await fs.readdir(postsDirectory); // 비동기 readdir
+    const filteredMarkdownFiles = fileNames.filter((name) => name.endsWith('.md')); // md 파일만 추출
 
     const posts = await Promise.all(
-      fileNames.map(async (fileName) => {
+      filteredMarkdownFiles.map(async (fileName) => {
         const filePath = path.join(postsDirectory, fileName);
         const fileContents = await fs.readFile(filePath, 'utf8'); // 비동기 readFile
         const { content, data } = matter(fileContents);
