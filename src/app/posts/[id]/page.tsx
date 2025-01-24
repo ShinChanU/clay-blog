@@ -21,7 +21,6 @@ const PostPage = async ({ params }: TProps) => {
     return <p>포스트를 찾을 수 없습니다.</p>;
   }
 
-  // TODO container 클래스 변경 max-width가 너무 넒음
   return (
     <>
       <Navbar />

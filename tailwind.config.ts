@@ -7,6 +7,15 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      screens: {
+        '2xl': '64rem',
+        lg: '48rem',
+        md: '100%',
+        sm: '100%',
+        xl: '64rem',
+      },
+    },
     extend: {
       borderColor: {
         DEFAULT: 'var(--border)',
