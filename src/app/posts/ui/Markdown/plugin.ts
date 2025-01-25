@@ -4,6 +4,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 
 export const markdownPlugins: Parameters<typeof ReactMarkdown>[0]['rehypePlugins'] = [
   rehypeRaw,
@@ -11,4 +12,5 @@ export const markdownPlugins: Parameters<typeof ReactMarkdown>[0]['rehypePlugins
   rehypeHighlight,
   rehypeSlug,
   [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+  remarkGfm,
 ];

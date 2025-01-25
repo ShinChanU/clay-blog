@@ -10,6 +10,7 @@ export type TPostData = {
   date: string;
   description: string;
   id: string;
+  mainImageSrc?: string;
   tags: string[];
   title: string;
 };
@@ -31,6 +32,7 @@ export async function getPostData(id: string): Promise<null | TPostData> {
       date: data.date as string,
       description: data.description as string,
       id,
+      mainImageSrc: data.mainImageSrc as string,
       tags: data.tags as string[],
       title: data.title as string,
     };
@@ -61,6 +63,7 @@ export async function getSortedPostsData(): Promise<TPostData[]> {
           date: data.date as string,
           description: data.description as string,
           id: fileName.replace(/\.md$/, ''), // 파일 이름을 id로 사용
+          mainImageSrc: data.mainImageSrc as string,
           tags: data.tags as string[],
           title: data.title as string,
         };

@@ -22,6 +22,10 @@ export const Markdown = ({ content }: TProps) => {
         img: MarkdownComponents.img,
         ol: MarkdownComponents.ol,
         p: MarkdownComponents.p,
+        table: MarkdownComponents.table,
+        td: MarkdownComponents.td,
+        th: MarkdownComponents.th,
+        tr: MarkdownComponents.tr,
         ul: MarkdownComponents.ul,
       }}
       rehypePlugins={markdownPlugins}

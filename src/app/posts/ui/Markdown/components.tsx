@@ -1,5 +1,13 @@
 import Image from 'next/image';
-import { AnchorHTMLAttributes, ClassAttributes, HTMLAttributes, ImgHTMLAttributes } from 'react';
+import {
+  AnchorHTMLAttributes,
+  ClassAttributes,
+  HTMLAttributes,
+  ImgHTMLAttributes,
+  TableHTMLAttributes,
+  TdHTMLAttributes,
+  ThHTMLAttributes,
+} from 'react';
 import { ExtraProps } from 'react-markdown';
 
 export const MarkdownComponents = {
@@ -15,6 +23,10 @@ export const MarkdownComponents = {
   img: CustomImage,
   ol: CustomOrderedList,
   p: CustomParagraph,
+  table: CustomTable,
+  td: CustomTableTd,
+  th: CustomTableTh,
+  tr: CustomTableTr,
   ul: CustomUnorderedList,
 };
 
@@ -78,6 +90,34 @@ function CustomParagraph({
   ...props
 }: ClassAttributes<HTMLParagraphElement> & HTMLAttributes<HTMLParagraphElement>) {
   return <p className={`my-2 ${className || ''}`} {...props} />;
+}
+
+function CustomTable({
+  className,
+  ...props
+}: ClassAttributes<HTMLTableElement> & TableHTMLAttributes<HTMLTableElement>) {
+  return <table className={`my-4 w-full border-collapse ${className || ''}`} {...props} />;
+}
+
+function CustomTableTd({
+  className,
+  ...props
+}: ClassAttributes<HTMLTableCellElement> & TdHTMLAttributes<HTMLTableCellElement>) {
+  return <td className={`border px-2 py-1 text-center ${className || ''}`} {...props} />;
+}
+
+function CustomTableTh({
+  className,
+  ...props
+}: ClassAttributes<HTMLTableCellElement> & ThHTMLAttributes<HTMLTableCellElement>) {
+  return <th className={`border bg-muted px-2 py-1 font-bold ${className || ''}`} {...props} />;
+}
+
+function CustomTableTr({
+  className,
+  ...props
+}: ClassAttributes<HTMLTableRowElement> & HTMLAttributes<HTMLTableRowElement>) {
+  return <tr className={`border ${className || ''}`} {...props} />;
 }
 
 function CustomUnorderedList({

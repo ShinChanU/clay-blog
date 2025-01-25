@@ -1,6 +1,7 @@
 import { PostHead } from '@/app/posts/ui/index';
 import { Markdown } from '@/app/posts/ui/Markdown/index';
 import { getPostData, Navbar } from '@/app/shared/index';
+import Image from 'next/image';
 
 type TProps = {
   params: Promise<{
@@ -29,7 +30,17 @@ const PostPage = async ({ params }: TProps) => {
           <PostHead post={post} />
         </div>
       </header>
-      <section className={`container mx-auto flex-1 px-4 py-8`}>
+      <section className={`container mx-auto flex-1 px-4 pb-8 pt-4`}>
+        <div className="mb-4 break-keep rounded-lg bg-primary-foreground px-4 py-6 text-lg font-bold text-primary">
+          {post.description}
+        </div>
+        <Image
+          alt="thumbnail"
+          className="object-cover pb-8"
+          height={0}
+          src={post.mainImageSrc ? `/content/${post.mainImageSrc}` : ''}
+          width={1200}
+        />
         <Markdown content={post.content} />
       </section>
     </>

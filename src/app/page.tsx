@@ -9,7 +9,7 @@ export default async function PostsPage() {
     <>
       <Navbar />
       <main className="container mx-auto flex-1 px-4 py-8">
-        <ul className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-6">
           {posts.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
