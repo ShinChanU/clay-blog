@@ -22,6 +22,8 @@ const PostPage = async ({ params }: TProps) => {
     return <p>포스트를 찾을 수 없습니다.</p>;
   }
 
+  console.log(post.content);
+
   return (
     <>
       <Navbar />
@@ -30,7 +32,7 @@ const PostPage = async ({ params }: TProps) => {
           <PostHead post={post} />
         </div>
       </header>
-      <section className={`container mx-auto flex-1 px-4 pb-8 pt-4`}>
+      <section className={`container relative mx-auto flex-1 px-4 pb-8 pt-4`}>
         <div className="mb-4 break-keep rounded-lg bg-primary-foreground px-4 py-6 text-lg font-bold text-primary">
           {post.description}
         </div>
@@ -42,6 +44,9 @@ const PostPage = async ({ params }: TProps) => {
           width={1200}
         />
         <Markdown content={post.content} />
+
+        {/* TODO 목차 개발 */}
+        <aside className="fixed right-[calc((100vw-64rem)/2-230px)] top-[64px] hidden w-[230px] 2xl:block"></aside>
       </section>
     </>
   );
