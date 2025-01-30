@@ -4,7 +4,7 @@ date: '2024-09-01'
 description: 'CSR의 가장 큰 단점은, 검색 엔진에 취약하고 오픈그래프를 동적으로 가져올 수 없다는 점입니다. 이러한 문제를 직면하고 해결하는 과정을 소개합니다.'
 tags: ['frontend', 'seo', 'open-graph', 'aws']
 topic: 'meta 최적화'
-# TODO mainImageSrc: "image-9.png"
+mainImageSrc: "image-12.png"
 ---
 
 ## 들어가며
@@ -40,7 +40,7 @@ SEO를 개선하는 방법에는 여러 가지가 있습니다. 대표적인 요
 **오픈 그래프(Open Graph, OG)**는 메타 태그를 활용하여 웹페이지가 소셜 미디어에서 공유될 때 미리보기 정보를 제어하는 기술입니다.
 이 기술은 원래 페이스북(Facebook)에서 개발한 프로토콜이지만, 현재는 트위터(Twitter), 카카오톡(KakaoTalk), 디스코드(Discord) 등 다양한 플랫폼에서 활용되고 있습니다.
 
-예시로 카카오톡으로 React 문서 페이지를 공유하면 아래 이미처럼 나오게됩니다.
+예시로 카카오톡으로 React 문서 페이지를 공유하면 아래 이미지처럼 나옵니다.
 ![alt text](image-11.png)
 
 페이지를 열어서 개발자 도구의 element 탭에서 오픈 그래프 태그를 살펴봤습니다.
@@ -52,8 +52,8 @@ SEO를 개선하는 방법에는 여러 가지가 있습니다. 대표적인 요
 <meta property="og:image" content="https://react.dev/images/og-home.png" data-next-head="">
 ```
 
-위 태그는 아래처럼 오픈그래프로 출력됩니다.
-
+위의 태그의 각 `property`는 각 플랫폼에 보여지는 형태에 맞춰서 오픈그래프로 출력됩니다.
+아래 이미지는 카카오톡 오픈그래프의 속성을 보기 쉽게 구조화되어있습니다.
 ![alt text](image-12.png)
 
 
