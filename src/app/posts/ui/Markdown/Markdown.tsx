@@ -11,6 +11,7 @@ export const Markdown = ({ content }: TProps) => {
       className={'break-keep'}
       components={{
         a: MarkdownComponents.a,
+        blockquote: MarkdownComponents.blockquote,
         code: MarkdownComponents.code,
         h1: MarkdownComponents.h1,
         h2: MarkdownComponents.h2,

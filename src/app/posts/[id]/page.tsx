@@ -1,6 +1,7 @@
 import { PostHead } from '@/app/posts/ui/index';
 import { Markdown } from '@/app/posts/ui/Markdown/index';
 import { getPostData, Navbar } from '@/app/shared/index';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 type TProps = {
@@ -8,6 +9,38 @@ type TProps = {
     id: string;
   }>;
 };
+
+// ✅ `generateMetadata` 추가 (params 기반으로 동적 메타데이터 생성)
+export async function generateMetadata({ params }: TProps): Promise<Metadata> {
+  const { id } = await params;
+  const post = await getPostData(id);
+
+  if (!post) {
+    return {
+      description: '프론트엔드 개발자 Clay의 기술 블로그입니다.',
+      title: 'clay.log',
+    };
+  }
+
+  const title = ` clay.log | ${post.title}`;
+
+  return {
+    description: post.description, // 게시글 설명
+    openGraph: {
+      description: post.description,
+      images: [
+        {
+          alt: post.title,
+          height: 630,
+          url: post.mainImageSrc ? `/content/${post.mainImageSrc}` : '',
+          width: 1200,
+        },
+      ],
+      title: title,
+    },
+    title: title, // 게시글 제목
+  };
+}
 
 const PostPage = async ({ params }: TProps) => {
   const id = (await params).id;
@@ -21,8 +54,6 @@ const PostPage = async ({ params }: TProps) => {
   if (!post) {
     return <p>포스트를 찾을 수 없습니다.</p>;
   }
-
-  console.log(post.content);
 
   return (
     <>
@@ -38,7 +69,7 @@ const PostPage = async ({ params }: TProps) => {
         </div>
         <Image
           alt="thumbnail"
-          className="object-cover pb-8"
+          className="h-[300px] object-contain pb-4"
           height={0}
           src={post.mainImageSrc ? `/content/${post.mainImageSrc}` : ''}
           width={1200}
