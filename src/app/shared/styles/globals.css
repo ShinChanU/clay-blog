@@ -101,6 +101,10 @@
 
   p {
     @apply text-sm leading-relaxed sm:text-base;
+
+    a {
+      @apply font-semibold text-primary underline underline-offset-4 transition-opacity hover:opacity-70;
+    }
   }
 
   html {

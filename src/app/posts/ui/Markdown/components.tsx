@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import {
   AnchorHTMLAttributes,
+  BlockquoteHTMLAttributes,
   ClassAttributes,
   HTMLAttributes,
   ImgHTMLAttributes,
@@ -12,6 +13,7 @@ import { ExtraProps } from 'react-markdown';
 
 export const MarkdownComponents = {
   a: CustomAnchor,
+  blockquote: CustomBlockquote,
   code: CustomCode,
   h1: HeadingH1,
   h2: HeadingH2,
@@ -30,6 +32,8 @@ export const MarkdownComponents = {
   ul: CustomUnorderedList,
 };
 
+// blockquote?: ElementType<ClassAttributes<HTMLQuoteElement> & BlockquoteHTMLAttributes<HTMLQuoteElement> & ExtraProps> | undefined
+
 function CustomAnchor({
   className,
   ...props
@@ -42,6 +46,18 @@ function CustomAnchor({
       } transition-opacity hover:opacity-70 ${className || ''}`}
       rel="noopener noreferrer"
       target={isHeaderLink ? '_self' : '_blank'}
+      {...props}
+    />
+  );
+}
+
+function CustomBlockquote({
+  className,
+  ...props
+}: BlockquoteHTMLAttributes<HTMLQuoteElement> & ClassAttributes<HTMLQuoteElement> & ExtraProps) {
+  return (
+    <blockquote
+      className={`border-l-[3px] border-primary bg-primary-foreground py-0.5 pl-3 ${className || ''}`}
       {...props}
     />
   );
@@ -66,15 +82,18 @@ function CustomImage({
   ...props
 }: ClassAttributes<HTMLImageElement> & ExtraProps & ImgHTMLAttributes<HTMLImageElement>) {
   return (
-    <span className={`relative my-4 flex w-full items-center justify-center ${className || ''}`}>
-      <Image
-        alt={props.alt ?? 'Image-alt'}
-        className={`object-contain ${className || ''}`}
-        height={300} // 원하는 최대 높이
-        src={props.src ? `/content/${props.src}` : ''} // content 폴더를 기준으로 동적 경로 생성
-        width={800} // 원하는 최대 너비
-      />
-    </span>
+    <Image
+      alt={props.alt ?? 'Image-alt'}
+      className={`mx-auto my-4 object-contain ${className || ''}`}
+      height={300}
+      src={props.src ? `/content/${props.src}` : ''} // content 폴더를 기준으로 동적 경로 생성
+      style={{
+        height: 'auto',
+        maxHeight: '100%',
+        width: 'auto',
+      }}
+      width={800}
+    />
   );
 }
 

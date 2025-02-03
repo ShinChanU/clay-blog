@@ -20,7 +20,7 @@ export const PostCard = ({ post }: TProps) => {
       <p className="mb-4 break-keep text-secondary-foreground">{post.description}</p>
       <Image
         alt="thumbnail"
-        className="mb-4 h-[300px] object-contain"
+        className="mb-4 h-[150px] object-contain lg:h-[300px]"
         height={0}
         src={post.mainImageSrc ? `/content/${post.mainImageSrc}` : ''}
         width={1200}
