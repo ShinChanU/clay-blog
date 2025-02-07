@@ -8,7 +8,8 @@ const HOST = 'https://www.blog.claychanwoo.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const postFiles = fs.readdirSync(postsDirectory);
-  const postUrls = postFiles.map((file) => {
+  const filteredMarkdownFiles = postFiles.filter((name) => name.endsWith('.md')); // md 파일만 추출
+  const postUrls = filteredMarkdownFiles.map((file) => {
     const id = file.replace(/\.md$/, '');
     return {
       changeFrequency: 'daily',
