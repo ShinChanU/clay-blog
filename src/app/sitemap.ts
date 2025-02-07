@@ -1,0 +1,30 @@
+import fs from 'fs';
+import { MetadataRoute } from 'next';
+import path from 'path';
+
+const postsDirectory = path.join(process.cwd(), 'public/content');
+
+const HOST = 'https://www.blog.claychanwoo.com';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const postFiles = fs.readdirSync(postsDirectory);
+  const postUrls = postFiles.map((file) => {
+    const id = file.replace(/\.md$/, '');
+    return {
+      changeFrequency: 'daily',
+      lastModified: new Date(),
+      priority: 0.8,
+      url: `${HOST}/posts/${id}`,
+    } satisfies MetadataRoute.Sitemap[number];
+  });
+
+  return [
+    {
+      changeFrequency: 'daily',
+      lastModified: new Date(),
+      priority: 1,
+      url: HOST,
+    },
+    ...postUrls,
+  ];
+}

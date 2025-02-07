@@ -11,7 +11,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  authors: { name: '신찬우' },
   description: '프론트엔드 개발자 Clay의 기술 블로그입니다.',
+  keywords: ['블로그', '기술 블로그', 'clay', 'clay.log', '신찬우', 'frontend', '프론트엔드'],
+  openGraph: {
+    description: '프론트엔드 개발자 Clay의 기술 블로그입니다.',
+    images: {
+      alt: 'clay.log',
+      height: 630,
+      url: '/open-graph-default.webp',
+      width: 1200,
+    },
+    title: 'clay.log',
+    type: 'website',
+    url: 'https://www.blog.claychanwoo.com',
+  },
+  robots: { follow: true, index: true },
   title: 'clay.log',
 };
 

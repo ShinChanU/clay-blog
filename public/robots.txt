@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.blog.claychanwoo.com/sitemap.xml
