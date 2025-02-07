@@ -17,8 +17,7 @@
     "git:add": "git add .",
     "git:commit": "git commit",
     "git:push": "git push origin main",
-    "push": "pnpm run git:add && pnpm run git:commit && pnpm run git:push",
-    "push:msg": "git add . && git commit -m"
+    "push:main": "pnpm run git:add && pnpm run git:commit && pnpm run git:push"
   },
   "dependencies": {
     "dayjs": "^1.11.13",
