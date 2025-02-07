@@ -15,7 +15,7 @@
     "type-check": "tsc -b --pretty --noEmit",
     "prepare": "husky",
     "git:add": "git add .",
-    "git:commit": "git commit -m \"Auto commit\"",
+    "git:commit": "git commit",
     "git:push": "git push origin main",
     "push": "pnpm run git:add && pnpm run git:commit && pnpm run git:push",
     "push:msg": "git add . && git commit -m"
