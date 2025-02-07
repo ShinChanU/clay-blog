@@ -13,7 +13,12 @@
     "lint": "next lint",
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx}\"",
     "type-check": "tsc -b --pretty --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "git:add": "git add .",
+    "git:commit": "git commit -m \"Auto commit\"",
+    "git:push": "git push origin main",
+    "push": "pnpm run git:add && pnpm run git:commit && pnpm run git:push",
+    "push:msg": "git add . && git commit -m"
   },
   "dependencies": {
     "dayjs": "^1.11.13",
