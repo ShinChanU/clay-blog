@@ -17,6 +17,7 @@
     "git:add": "git add .",
     "git:commit": "git commit",
     "git:push": "git push origin main",
+    "git:pull": "git pull origin main",
     "push:main": "pnpm run git:add && pnpm run git:commit && pnpm run git:push"
   },
   "dependencies": {

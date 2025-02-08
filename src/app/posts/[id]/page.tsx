@@ -17,19 +17,19 @@ export async function generateMetadata({ params }: TProps): Promise<Metadata> {
 
   if (!post) {
     return {
-      description: '프론트엔드 개발자 Clay의 기술 블로그입니다.ㅎㅎ',
+      description: '프론트엔드 개발자 Clay의 기술 블로그입니다.',
       title: 'clay.log',
     };
   }
 
-  const title = `clay.log | ${post.title}`;
+  const title = post.title;
 
   return {
     description: post.description, // 게시글 설명
     openGraph: {
       description: post.description,
       images: {
-        alt: post.title,
+        alt: title,
         height: 630,
         url: post.mainImageSrc ? `/content/${post.mainImageSrc}` : '/open-graph-default.webp',
         width: 1200,

@@ -13,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   authors: { name: '신찬우' },
   description: '프론트엔드 개발자 Clay의 기술 블로그입니다.',
+  icons: {
+    icon: '/favicon.ico',
+  },
   keywords: ['블로그', '기술 블로그', 'clay', 'clay.log', '신찬우', 'frontend', '프론트엔드'],
   openGraph: {
     description: '프론트엔드 개발자 Clay의 기술 블로그입니다.',
