@@ -20,7 +20,7 @@ export const GiscusComment = () => {
     scriptElement.setAttribute('data-repo-id', NEXT_PUBLIC_REPO_ID);
     scriptElement.setAttribute('data-category', 'Comments');
     scriptElement.setAttribute('data-category-id', NEXT_PUBLIC_CATEGORY_ID);
-    scriptElement.setAttribute('data-mapping', 'pathname');
+    scriptElement.setAttribute('data-mapping', 'og:title');
     scriptElement.setAttribute('data-strict', '0');
     scriptElement.setAttribute('data-reactions-enabled', '1');
     scriptElement.setAttribute('data-emit-metadata', '0');
