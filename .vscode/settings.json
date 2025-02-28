@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["turbopack"],
+  "cSpell.words": ["Giscus", "SUPABASE", "turbopack"],
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"

@@ -1,3 +1,4 @@
+import { GiscusComment } from '@/app/posts/ui/GiscusComment';
 import { PostHead } from '@/app/posts/ui/index';
 import { Markdown } from '@/app/posts/ui/Markdown/index';
 import { getPostData, Navbar } from '@/app/shared/index';
@@ -73,6 +74,7 @@ const PostPage = async ({ params }: TProps) => {
           width={1200}
         />
         <Markdown content={post.content} />
+        <GiscusComment />
 
         {/* TODO 목차 개발 */}
         <aside className="fixed right-[calc((100vw-64rem)/2-230px)] top-[64px] hidden w-[230px] 2xl:block"></aside>
