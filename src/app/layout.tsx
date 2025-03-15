@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     images: {
       alt: 'clay.log',
       height: 630,
-      url: '/open-graph-default.webp',
+      url: 'https://www.blog.claychanwoo.com/open-graph-default.webp',
       width: 1200,
     },
     title: 'clay.log',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   },
   robots: { follow: true, index: true },
   title: 'clay.log',
+  viewport: 'width=device-width, initial-scale=1',
 };
 
 export default function RootLayout({
