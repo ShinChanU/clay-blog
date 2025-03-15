@@ -1,5 +1,5 @@
-import { MarkdownComponents } from '@/app/posts/ui/Markdown';
-import { type TPostData } from '@/app/shared/index';
+import { MarkdownComponents } from '@/entities/index';
+import { type TPostData } from '@/shared/index';
 import dayjs from 'dayjs';
 
 type TProps = {

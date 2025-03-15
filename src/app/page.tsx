@@ -1,21 +1,8 @@
-import { PostCard } from '@/app/posts/ui/index';
-import { Footer, Navbar } from '@/app/shared/index';
-import { getSortedPostsData } from '@/app/shared/utils/posts';
+import { getSortedPostsData } from '@/shared/index';
+import { PostHome } from '@/widgets/index';
 
-export default async function PostsPage() {
+export default async function Page() {
   const posts = await getSortedPostsData();
 
-  return (
-    <>
-      <Navbar />
-      <main className="container mx-auto flex-1 px-4 py-8">
-        <ul className="grid grid-cols-1 gap-6">
-          {posts.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </ul>
-      </main>
-      <Footer />
-    </>
-  );
+  return <PostHome posts={posts} />;
 }

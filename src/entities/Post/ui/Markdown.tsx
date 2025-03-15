@@ -1,4 +1,4 @@
-import { MarkdownComponents, markdownPlugins } from '@/app/posts/ui/Markdown/index';
+import { MarkdownComponents, markdownPlugins } from '@/entities/index';
 import ReactMarkdown from 'react-markdown';
 
 type TProps = {

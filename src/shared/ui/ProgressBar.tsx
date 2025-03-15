@@ -1,6 +1,6 @@
 'use client';
 
-import '@/app/shared/styles/nprogress.css';
+import '@/shared/styles/nprogress.css';
 import { usePathname } from 'next/navigation';
 import NProgress from 'nprogress';
 import { useEffect } from 'react';

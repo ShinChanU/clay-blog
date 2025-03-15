@@ -1,4 +1,4 @@
-import { type TPostData } from '@/app/shared/index';
+import { type TPostData } from '@/shared/index';
 import dayjs from 'dayjs';
 import Image from 'next/image';
 import Link from 'next/link';

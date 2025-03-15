@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
-import '@/app/shared/styles/globals.css';
-import '@/app/shared/styles/reset.css';
-import ProgressBar from '@/app/shared/ui/ProgressBar';
+import { Footer, Navbar } from '@/shared/index';
+import '@/shared/styles/globals.css';
+import '@/shared/styles/reset.css';
+import ProgressBar from '@/shared/ui/ProgressBar';
 import 'highlight.js/styles/github-dark.css';
 import { Inter } from 'next/font/google';
 
@@ -60,7 +61,12 @@ export default function RootLayout({
       <meta content="#ffffff" name="theme-color" />
       <body className={`font-sans antialiased`}>
         <ProgressBar />
-        <main className="flex min-h-screen flex-col bg-background">{children}</main>
+        <Navbar />
+        <main className="container mx-auto flex min-h-screen flex-1 flex-col bg-background px-4 py-8">{children}</main>
+        {/* <main className="flex min-h-screen flex-col bg-background">
+          <main className="container mx-auto flex-1 px-4 py-8">{children}</main>
+        </main> */}
+        <Footer />
       </body>
     </html>
   );
