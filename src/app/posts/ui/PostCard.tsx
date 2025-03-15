@@ -12,6 +12,7 @@ export const PostCard = ({ post }: TProps) => {
     <Link
       className="overflow-hidden rounded-lg bg-muted p-6 text-card-foreground shadow-md transition hover:shadow-xl"
       href={`/posts/${post.id}`}
+      prefetch
     >
       <div className="mb-6 flex items-end justify-between">
         <h2 className="text-2xl font-bold">{post.title}</h2>

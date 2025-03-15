@@ -21,10 +21,12 @@
     "push:main": "pnpm run git:add && pnpm run git:commit && pnpm run git:push"
   },
   "dependencies": {
+    "@types/nprogress": "^0.2.3",
     "dayjs": "^1.11.13",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "next": "15.1.5",
+    "nprogress": "^0.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^9.0.3",

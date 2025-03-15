@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import '@/app/shared/styles/globals.css';
 import '@/app/shared/styles/reset.css';
+import ProgressBar from '@/app/shared/ui/ProgressBar';
 import 'highlight.js/styles/github-dark.css';
 import { Inter } from 'next/font/google';
 
@@ -31,7 +32,6 @@ export const metadata: Metadata = {
   },
   robots: { follow: true, index: true },
   title: 'clay.log',
-  viewport: 'width=device-width, initial-scale=1',
 };
 
 export default function RootLayout({
@@ -59,6 +59,7 @@ export default function RootLayout({
       <meta content="/ms-icon-144x144.png" name="msapplication-TileImage" />
       <meta content="#ffffff" name="theme-color" />
       <body className={`font-sans antialiased`}>
+        <ProgressBar />
         <main className="flex min-h-screen flex-col bg-background">{children}</main>
       </body>
     </html>
