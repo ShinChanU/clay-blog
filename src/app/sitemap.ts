@@ -4,7 +4,7 @@ import path from 'path';
 
 const postsDirectory = path.join(process.cwd(), 'public/content');
 
-const HOST = 'https://www.blog.claychanwoo.com';
+const HOST = 'https://blog.claychanwoo.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const postFiles = fs.readdirSync(postsDirectory);
