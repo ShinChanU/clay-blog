@@ -4,7 +4,7 @@ import path from 'path';
 
 const postsDirectory = path.join(process.cwd(), 'public/content');
 
-const HOST = 'https://blog.claychanwoo.com';
+const baseUrl = 'https://claychanwoo.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const postFiles = fs.readdirSync(postsDirectory);
@@ -14,15 +14,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return {
       changeFrequency: 'daily',
       lastModified: new Date(),
-      priority: 0.8,
-      url: `${HOST}/posts/${id}`,
+      priority: 1,
+      url: `${baseUrl}/posts/${id}`,
     } satisfies MetadataRoute.Sitemap[number];
   });
 
   return [
     {
+      changeFrequency: 'daily',
       lastModified: new Date(),
-      url: HOST,
+      priority: 1,
+      url: baseUrl,
     },
     ...postUrls,
   ];
