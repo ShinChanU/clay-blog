@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.blog.claychanwoo.com/sitemap.xml
+Sitemap: https://claychanwoo.com/sitemap.xml
