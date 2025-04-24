@@ -1,4 +1,4 @@
-import { getPostData } from '@/shared/index';
+import { getPostData, getSortedPostsData } from '@/shared/index';
 import { PostDetail } from '@/widgets/index';
 import { Metadata } from 'next';
 
@@ -36,6 +36,11 @@ export async function generateMetadata({ params }: TProps): Promise<Metadata> {
     },
     title: title, // 게시글 제목
   };
+}
+
+export async function generateStaticParams() {
+  const posts = await getSortedPostsData();
+  return posts.map(({ id }) => ({ id }));
 }
 
 const PostPage = async ({ params }: TProps) => {
