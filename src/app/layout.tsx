@@ -5,6 +5,7 @@ import '@/shared/styles/globals.css';
 import '@/shared/styles/reset.css';
 import ProgressBar from '@/shared/ui/ProgressBar';
 import 'highlight.js/styles/github-dark.css';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
@@ -48,6 +49,7 @@ export default function RootLayout({
         <Navbar />
         <main className="container mx-auto flex min-h-screen flex-1 flex-col bg-background px-4 py-8">{children}</main>
         <Footer />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ''} />
       </body>
     </html>
   );
