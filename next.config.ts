@@ -1,14 +1,6 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // 압축 설정
-  compress: true,
-
-  // 성능 최적화
-  experimental: {
-    optimizeCss: true,
-  },
-
   // 헤더 설정으로 SEO 최적화
   async headers() {
     return [
