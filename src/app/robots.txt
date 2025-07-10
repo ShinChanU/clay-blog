@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json$
+
 Sitemap: https://claychanwoo.com/sitemap.xml

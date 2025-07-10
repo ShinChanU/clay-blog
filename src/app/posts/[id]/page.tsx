@@ -21,20 +21,46 @@ export async function generateMetadata({ params }: TProps): Promise<Metadata> {
   }
 
   const title = post.title;
+  const imageUrl = post.mainImageSrc
+    ? `https://claychanwoo.com/content/${post.mainImageSrc}`
+    : 'https://claychanwoo.com/open-graph-default.webp';
+  const canonicalUrl = `https://claychanwoo.com/posts/${id}`;
 
   return {
+    alternates: {
+      canonical: canonicalUrl,
+    },
     description: post.description, // 게시글 설명
+    keywords: [...post.tags, '기술 블로그', '프론트엔드', '개발'],
     openGraph: {
       description: post.description,
       images: {
         alt: title,
         height: 630,
-        url: post.mainImageSrc ? `/content/${post.mainImageSrc}` : '/open-graph-default.webp',
+        url: imageUrl,
         width: 1200,
       },
       title: title,
+      type: 'article',
+      url: canonicalUrl,
+    },
+    robots: {
+      follow: true,
+      googleBot: {
+        follow: true,
+        index: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+      index: true,
     },
     title: title, // 게시글 제목
+    twitter: {
+      card: 'summary_large_image',
+      description: post.description,
+      images: [imageUrl],
+      title: title,
+    },
   };
 }
 

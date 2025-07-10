@@ -11,17 +11,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const filteredMarkdownFiles = postFiles.filter((name) => name.endsWith('.md')); // md 파일만 추출
   const postUrls = filteredMarkdownFiles.map((file) => {
     const id = file.replace(/\.md$/, '');
+    const filePath = path.join(postsDirectory, file);
+    const stats = fs.statSync(filePath);
+
     return {
-      changeFrequency: 'daily',
-      lastModified: new Date(),
-      priority: 1,
+      changeFrequency: 'weekly' as const,
+      lastModified: stats.mtime,
+      priority: 0.8,
       url: `${baseUrl}/posts/${id}`,
     } satisfies MetadataRoute.Sitemap[number];
   });
 
   return [
     {
-      changeFrequency: 'daily',
+      changeFrequency: 'daily' as const,
       lastModified: new Date(),
       priority: 1,
       url: baseUrl,

@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
   keywords: ['블로그', '기술 블로그', 'clay', 'clay.log', '신찬우', 'frontend', '프론트엔드'],
+  metadataBase: new URL('https://claychanwoo.com'),
   openGraph: {
     description: '프론트엔드 개발자 Clay의 기술 블로그입니다.',
     images: {
@@ -32,7 +33,16 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://claychanwoo.com',
   },
-  robots: { follow: true, index: true },
+  robots: {
+    follow: true,
+    googleBot: {
+      follow: true,
+      index: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+    index: true,
+  },
   title: 'clay.log',
 };
 
