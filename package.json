@@ -62,5 +62,10 @@
       "pnpm run lint --file",
       "pnpm run format"
     ]
+  },
+  "pnpm": {
+    "overrides": {
+      "brace-expansion": "^2.0.2"
+    }
   }
 }
