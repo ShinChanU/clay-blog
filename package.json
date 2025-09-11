@@ -65,7 +65,9 @@
   },
   "pnpm": {
     "overrides": {
-      "brace-expansion": "^2.0.2"
+      "brace-expansion": "^2.0.2",
+      "next": ">=15.4.7",
+      "@eslint/plugin-kit": ">=0.3.4"
     }
   }
 }
