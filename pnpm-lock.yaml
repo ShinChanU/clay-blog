@@ -15,7 +15,7 @@ importers:
     dependencies:
       '@next/third-parties':
         specifier: ^15.5.7
-        version: 15.5.7(next@16.0.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react@19.2.1)
+        version: 15.5.7(next@16.0.7(react-dom@19.2.2(react@19.2.2))(react@19.2.2))(react@19.2.2)
       '@types/nprogress':
         specifier: ^0.2.3
         version: 0.2.3
@@ -30,19 +30,19 @@ importers:
         version: 11.11.1
       next:
         specifier: '>=15.4.7'
-        version: 16.0.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        version: 16.0.7(react-dom@19.2.2(react@19.2.2))(react@19.2.2)
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
       react:
-        specifier: ^19.2.1
-        version: 19.2.1
+        specifier: ^19.2.2
+        version: 19.2.2
       react-dom:
-        specifier: ^19.2.1
-        version: 19.2.1(react@19.2.1)
+        specifier: ^19.2.2
+        version: 19.2.2(react@19.2.2)
       react-markdown:
         specifier: ^9.1.0
-        version: 9.1.0(@types/react@19.2.7)(react@19.2.1)
+        version: 9.1.0(@types/react@19.2.7)(react@19.2.2)
       rehype-autolink-headings:
         specifier: ^7.1.0
         version: 7.1.0
@@ -2050,10 +2050,10 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  react-dom@19.2.1:
-    resolution: {integrity: sha512-ibrK8llX2a4eOskq1mXKu/TGZj9qzomO+sNfO98M6d9zIPOEhlBkMkBUBLd1vgS0gQsLDBzA+8jJBVXDnfHmJg==}
+  react-dom@19.2.2:
+    resolution: {integrity: sha512-fhyD2BLrew6qYf4NNtHff1rLXvzR25rq49p+FeqByOazc6TcSi2n8EYulo5C1PbH+1uBW++5S1SG7FcUU6mlDg==}
     peerDependencies:
-      react: ^19.2.1
+      react: ^19.2.2
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -2064,8 +2064,8 @@ packages:
       '@types/react': '>=18'
       react: '>=18'
 
-  react@19.2.1:
-    resolution: {integrity: sha512-DGrYcCWK7tvYMnWh79yrPHt+vdx9tY+1gPZa7nJQtO/p8bLTDaHp4dzwEhQB7pZ4Xe3ok4XKuEPrVuc+wlpkmw==}
+  react@19.2.2:
+    resolution: {integrity: sha512-BdOGOY8OKRBcgoDkwqA8Q5XvOIhoNx/Sh6BnGJlet2Abt0X5BK0BDrqGyQgLhAVjD2nAg5f6o01u/OPUhG022Q==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -2719,10 +2719,10 @@ snapshots:
   '@next/swc-win32-x64-msvc@16.0.7':
     optional: true
 
-  '@next/third-parties@15.5.7(next@16.0.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react@19.2.1)':
+  '@next/third-parties@15.5.7(next@16.0.7(react-dom@19.2.2(react@19.2.2))(react@19.2.2))(react@19.2.2)':
     dependencies:
-      next: 16.0.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
-      react: 19.2.1
+      next: 16.0.7(react-dom@19.2.2(react@19.2.2))(react@19.2.2)
+      react: 19.2.2
       third-party-capital: 1.0.20
 
   '@nodelib/fs.scandir@2.1.5':
@@ -4508,15 +4508,15 @@ snapshots:
 
   natural-orderby@5.0.0: {}
 
-  next@16.0.7(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+  next@16.0.7(react-dom@19.2.2(react@19.2.2))(react@19.2.2):
     dependencies:
       '@next/env': 16.0.7
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001759
       postcss: 8.4.31
-      react: 19.2.1
-      react-dom: 19.2.1(react@19.2.1)
-      styled-jsx: 5.1.6(react@19.2.1)
+      react: 19.2.2
+      react-dom: 19.2.2(react@19.2.2)
+      styled-jsx: 5.1.6(react@19.2.2)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.0.7
       '@next/swc-darwin-x64': 16.0.7
@@ -4718,14 +4718,14 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-dom@19.2.1(react@19.2.1):
+  react-dom@19.2.2(react@19.2.2):
     dependencies:
-      react: 19.2.1
+      react: 19.2.2
       scheduler: 0.27.0
 
   react-is@16.13.1: {}
 
-  react-markdown@9.1.0(@types/react@19.2.7)(react@19.2.1):
+  react-markdown@9.1.0(@types/react@19.2.7)(react@19.2.2):
     dependencies:
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
@@ -4734,7 +4734,7 @@ snapshots:
       hast-util-to-jsx-runtime: 2.3.6
       html-url-attributes: 3.0.1
       mdast-util-to-hast: 13.2.1
-      react: 19.2.1
+      react: 19.2.2
       remark-parse: 11.0.0
       remark-rehype: 11.1.2
       unified: 11.0.5
@@ -4743,7 +4743,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  react@19.2.1: {}
+  react@19.2.2: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -5102,10 +5102,10 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.7
 
-  styled-jsx@5.1.6(react@19.2.1):
+  styled-jsx@5.1.6(react@19.2.2):
     dependencies:
       client-only: 0.0.1
-      react: 19.2.1
+      react: 19.2.2
 
   sucrase@3.35.1:
     dependencies:
