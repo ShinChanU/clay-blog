@@ -1,0 +1,60 @@
+---
+description: Next.js App Router 렌더링 전략 — Server Component 기본, Client Component 최소화
+globs: src/app/**/*.tsx
+alwaysApply: false
+---
+
+# 렌더링 전략
+
+## Server Component가 기본
+
+모든 `page.tsx`, `layout.tsx`는 Server Component로 작성한다. `'use client'`는 아래 조건일 때만 사용.
+
+### Client Component 허용 조건
+
+- `useState`, `useEffect`, `useRef` 등 React 훅 필요
+- `usePathname`, `useRouter` 등 next/navigation 훅 필요
+- `onClick`, `onChange` 등 이벤트 핸들러 직접 바인딩
+- `localStorage`, `window`, `document` 접근
+- 서드파티 라이브러리가 Client 전용 (`sendGAEvent`, `NProgress`)
+
+### 금지 패턴
+
+```tsx
+// ❌ page.tsx에 'use client' 넣지 않는다
+'use client';
+export default function Page() { ... }
+
+// ✅ page.tsx는 Server Component, 인터랙티브 부분만 분리
+export default async function Page() {
+  const data = await fetchData();
+  return <ClientInteraction data={data} />;
+}
+```
+
+## SSG 전략
+
+| 라우트 | 전략 | 방법 |
+|--------|------|------|
+| 정적 페이지 (`/`, `/about`) | SSG | 기본값 (async Server Component) |
+| 동적 라우트 (`/blog/[slug]`) | SSG + generateStaticParams | 빌드 타임 사전 생성 |
+| 사용자별 데이터 | 사용하지 않음 | 이 프로젝트에 해당 없음 |
+
+## 데이터 페칭
+
+```tsx
+// ✅ Server Component에서 직접 호출 (fetch 아닌 fs 기반)
+export default async function Page() {
+  const [projects, posts] = await Promise.all([
+    getFeaturedProjects(),
+    getSortedPostsData(),
+  ]);
+  return <>{/* ... */}</>;
+}
+
+// ✅ generateStaticParams로 동적 라우트 사전 생성
+export async function generateStaticParams() {
+  const items = await getSortedData();
+  return items.map(({ id }) => ({ slug: id }));
+}
+```

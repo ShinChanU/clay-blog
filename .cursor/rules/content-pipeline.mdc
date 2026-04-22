@@ -1,0 +1,62 @@
+---
+description: 마크다운 콘텐츠 파이프라인 — 블로그 포스트와 프로젝트 작성 규칙
+globs: public/content/**/*.md
+alwaysApply: false
+---
+
+# 콘텐츠 구조
+
+```
+public/content/
+  *.md                    # 블로그 포스트 (posts.ts가 읽음)
+  projects/*.md           # 프로젝트 (projects.ts가 읽음)
+```
+
+## 블로그 포스트 frontmatter
+
+```yaml
+---
+title: "제목"
+date: "YYYY-MM-DD"
+description: "1-2줄 설명"
+mainImageSrc: "images/thumb.webp"   # public/content/ 기준 상대경로
+tags: ["tag1", "tag2"]
+---
+```
+
+## 프로젝트 frontmatter
+
+```yaml
+---
+title: "프로젝트명"
+category: "career"          # "career" | "side"
+date: "YYYY-MM-DD"
+description: "1-2줄 설명"
+highlight: "핵심 수치 한 줄"  # 카드에 primary 색상으로 표시
+tags: ["TypeScript", "React"]
+role: "Frontend Architect"
+duration: "2025.09 ~ 현재"
+links:
+  github: "https://..."
+  live: "https://..."
+featured: true              # 홈 Featured에 표시 여부
+---
+```
+
+## 프로젝트 본문 구조
+
+문제→접근→해결→결과 서사:
+
+```markdown
+## 배경
+[왜 이 프로젝트를 했는지]
+
+## 접근
+[어떤 방식으로 문제를 풀었는지]
+
+## 해결
+[구체적 구현 내용]
+
+## 결과
+[수치로 표현된 성과]
+```
