@@ -1,0 +1,43 @@
+---
+description: FSD 아키텍처 레이어 규칙 — entities, widgets, shared 계층 분리
+globs: src/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# FSD 레이어 구조
+
+```
+src/
+  app/          # 라우트 (page.tsx, layout.tsx, generateMetadata)
+  entities/     # 도메인 UI 단위 (PostCard, ProjectCard, Markdown)
+  widgets/      # 페이지 단위 조합 (PostDetail, PostHome)
+  shared/       # 유틸, 공통 UI, 스타일, 타입
+    ui/         # Navbar, Footer, ThemeToggle, ProgressBar
+    utils/      # posts.ts, projects.ts (데이터 로더)
+    styles/     # globals.css, reset.css, nprogress.css
+```
+
+## 의존성 방향 (단방향만 허용)
+
+```
+app → widgets → entities → shared
+```
+
+```tsx
+// ❌ entities가 widgets를 import
+import { PostHome } from '@/widgets/index';
+
+// ❌ shared가 entities를 import
+import { PostCard } from '@/entities/index';
+
+// ✅ 상위 레이어만 하위 레이어를 import
+import { PostCard } from '@/entities/index';    // widgets에서
+import { type TPostData } from '@/shared/index'; // entities에서
+```
+
+## 새 도메인 추가 시
+
+1. `entities/[Domain]/ui/` 에 UI 컴포넌트 생성
+2. `entities/index.ts`에 re-export 추가
+3. 필요시 `widgets/[Domain]/ui/`에 페이지 위젯 생성
+4. `shared/utils/`에 데이터 로더 함수 추가

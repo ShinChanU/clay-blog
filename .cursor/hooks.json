@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": ".cursor/hooks/check-client-directive.sh",
+        "matcher": "Write"
+      },
+      {
+        "command": ".cursor/hooks/check-fsd-imports.sh",
+        "matcher": "Write"
+      }
+    ]
+  }
+}

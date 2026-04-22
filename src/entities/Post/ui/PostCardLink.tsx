@@ -12,7 +12,7 @@ type TProps = {
 export const PostCardLink = ({ children, post }: TProps) => {
   return (
     <Link
-      href={`/posts/${post.id}`}
+      href={`/blog/${post.id}`}
       onClick={() =>
         sendGAEvent('event', 'post_click', {
           post_id: post.id,

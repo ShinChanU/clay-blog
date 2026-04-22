@@ -1,7 +1,21 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // 헤더 설정으로 SEO 최적화
+  async redirects() {
+    return [
+      {
+        destination: '/blog/:slug',
+        permanent: true,
+        source: '/posts/:slug',
+      },
+      {
+        destination: '/',
+        permanent: false,
+        source: '/blog',
+      },
+    ];
+  },
+
   async headers() {
     return [
       {

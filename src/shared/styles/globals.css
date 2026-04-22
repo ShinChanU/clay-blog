@@ -4,43 +4,26 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #030712;
-    --card: #ffffff;
-    --card-foreground: #030712;
-    --popover: #ffffff;
-    --popover-foreground: #030712;
-    --primary: #7b39ed;
-    --primary-foreground: #f9fafb;
-    --secondary: #f3f4f6;
-    --secondary-foreground: #111827;
-    --muted: #f3f4f6;
-    --muted-foreground: #6b7280;
-    --accent: #f3f4f6;
-    --accent-foreground: #111827;
-    --destructive: #ef4400;
-    --destructive-foreground: #f9fafb;
-    --border: #e5e7eb;
-    --input: #e5e7eb;
-    --ring: #7b39ed;
+    --background: oklch(0.975 0.007 70);
+    --foreground: oklch(0.215 0.015 55);
+    --card: oklch(0.985 0.005 70);
+    --card-foreground: oklch(0.215 0.015 55);
+    --popover: oklch(0.985 0.005 70);
+    --popover-foreground: oklch(0.215 0.015 55);
+    --primary: oklch(0.55 0.13 40);
+    --primary-foreground: oklch(0.97 0.007 70);
+    --secondary: oklch(0.935 0.012 70);
+    --secondary-foreground: oklch(0.30 0.015 55);
+    --muted: oklch(0.92 0.008 70);
+    --muted-foreground: oklch(0.50 0.015 60);
+    --accent: oklch(0.55 0.07 145);
+    --accent-foreground: oklch(0.97 0.007 70);
+    --destructive: oklch(0.50 0.18 25);
+    --destructive-foreground: oklch(0.97 0.007 70);
+    --border: oklch(0.88 0.010 70);
+    --input: oklch(0.88 0.010 70);
+    --ring: oklch(0.55 0.13 40);
     --radius: 0.5rem;
-    --chart-1: #e76e50;
-    --chart-2: #2a9d90;
-    --chart-3: #274754;
-    --chart-4: #e9c468;
-    --chart-5: #f4a462;
-
-    /* GPT 추천 추가하면 좋을 색상 */
-    /* --info: #3b82f6;
-    --info-foreground: #ffffff;
-    --warning: #f59e0b;
-    --warning-foreground: #ffffff;
-    --success: #10b981;
-    --success-foreground: #ffffff; */
-
-    --font-sans: 'Inter', sans-serif;
-    --font-mono: 'Fira Code', monospace;
-    --font-serif: 'Playfair Display', serif;
 
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -49,34 +32,29 @@
   }
 
   .dark {
-    --background: #030712;
-    --foreground: #f9fafb;
-    --card: #030712;
-    --card-foreground: #f9fafb;
-    --popover: #030712;
-    --popover-foreground: #f9fafb;
-    --primary: #6d28d9;
-    --primary-foreground: #f9fafb;
-    --secondary: #1f2937;
-    --secondary-foreground: #f9fafb;
-    --muted: #1f2937;
-    --muted-foreground: #9ca3af;
-    --accent: #1f2937;
-    --accent-foreground: #f9fafb;
-    --destructive: #7f1d00;
-    --destructive-foreground: #f9fafb;
-    --border: #1f2937;
-    --input: #1f2937;
-    --ring: #6d28d9;
-    --chart-1: #2661d9;
-    --chart-2: #2eb88a;
-    --chart-3: #e88c30;
-    --chart-4: #af57db;
-    --chart-5: #e23670;
+    --background: oklch(0.185 0.012 55);
+    --foreground: oklch(0.925 0.008 70);
+    --card: oklch(0.215 0.012 55);
+    --card-foreground: oklch(0.925 0.008 70);
+    --popover: oklch(0.215 0.012 55);
+    --popover-foreground: oklch(0.925 0.008 70);
+    --primary: oklch(0.65 0.12 45);
+    --primary-foreground: oklch(0.185 0.012 55);
+    --secondary: oklch(0.255 0.012 55);
+    --secondary-foreground: oklch(0.90 0.008 70);
+    --muted: oklch(0.275 0.010 55);
+    --muted-foreground: oklch(0.62 0.012 60);
+    --accent: oklch(0.58 0.07 145);
+    --accent-foreground: oklch(0.185 0.012 55);
+    --destructive: oklch(0.45 0.15 25);
+    --destructive-foreground: oklch(0.925 0.008 70);
+    --border: oklch(0.30 0.010 55);
+    --input: oklch(0.30 0.010 55);
+    --ring: oklch(0.65 0.12 45);
   }
 
   h1 {
-    @apply text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl;
+    @apply text-4xl font-bold leading-tight tracking-tight sm:text-5xl;
   }
 
   h2 {
@@ -114,5 +92,40 @@
   body {
     color: var(--foreground);
     background: var(--background);
+  }
+
+  .dark body {
+    line-height: 1.7;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .stagger-1 { animation-delay: 0ms; }
+  .stagger-2 { animation-delay: 80ms; }
+  .stagger-3 { animation-delay: 160ms; }
+  .stagger-4 { animation-delay: 240ms; }
+  .stagger-5 { animation-delay: 320ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

@@ -46,9 +46,9 @@ export default {
         'secondary-foreground': 'var(--secondary-foreground)',
       },
       fontFamily: {
+        display: ['var(--font-display)', 'var(--font-kr)', 'serif'],
         mono: ['var(--font-mono)', 'monospace'],
-        sans: ['var(--font-sans)', 'sans-serif'],
-        serif: ['var(--font-serif)', 'serif'],
+        sans: ['var(--font-sans)', 'var(--font-kr)', 'sans-serif'],
       },
       fontSize: {
         'inherit-sm': ['0.875em', { lineHeight: '1.25' }], // 부모 크기 기준으로 작게
